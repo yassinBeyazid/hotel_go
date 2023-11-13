@@ -25,5 +25,9 @@ class ReservationBloc extends Bloc<ReservationEvent, ReservationState> {
       emit(state.copyWith(
           rooms: event.rooms, adults: event.adults, children: event.children));
     });
+    on<ResetDate>((event, emit) {
+      emit(state.copyWith(
+          dateFrom: null, dateTo: null ));
+    });
   }
 }

@@ -22,6 +22,9 @@ class SetNationality extends ReservationEvent {
   final String? nationality;
   SetNationality({this.nationality});
 }
+class ResetDate extends ReservationEvent {
+
+}
 
 class ApplyRoomAdultsChildren extends ReservationEvent{
   final int? rooms;

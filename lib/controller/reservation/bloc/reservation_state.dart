@@ -14,7 +14,7 @@ class ReservationState extends Equatable{
   const ReservationState(
       {this.city,
       this.adults = 1,
-      this.children = 1,
+      this.children = 0,
       this.dateFrom,
       this.dateTo,
       this.nationality,

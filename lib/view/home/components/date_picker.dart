@@ -26,6 +26,7 @@ class DatePickerFromTo extends StatelessWidget {
                     const Text('Apply'))
               ],
               content: SfDateRangePicker(
+
                 onSelectionChanged:
                     (DateRangePickerSelectionChangedArgs
                 val) {
