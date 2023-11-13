@@ -54,7 +54,16 @@ class BottomSheetModal {
                 appBar: AppBar(
                   centerTitle: true,
                   backgroundColor: Colors.white,
-
+                  actions: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: InkWell(
+                          onTap: (){
+                            Navigator.pop(context);
+                          },
+                          child: Icon(Icons.close,color: Colors.black,)),
+                    )
+                  ],
                   title:  Text(
                     'Rooms and Guests',
                     style: TextStyle(
@@ -134,8 +143,7 @@ class BottomSheetModal {
                                         Container(
                                           decoration: BoxDecoration(border: Border.all(color:(roomNumber != 1)? AppConstants.darkBlue:Colors.grey ), borderRadius: BorderRadius.all(Radius.circular(50))),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Icon(
+                                            padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),                                            child: Icon(
                                               Icons.remove,
                                               color: (roomNumber != 1)? AppConstants.darkBlue:Colors.grey,
                                             ),
@@ -170,7 +178,7 @@ class BottomSheetModal {
                                         Container(
                                           decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),
                                             child: Icon(Icons.add, color: AppConstants.darkBlue),
                                           ),
                                         ),
@@ -226,11 +234,11 @@ class BottomSheetModal {
                                       .start,
                                   children: [
                                     Text(
-                                      'Room 1',
+                                      'ROOM 1',
                                       style: TextStyle(
-                                          fontSize: 18,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w400),
+                                          fontSize: 12,
+                                          color: Colors.black.withOpacity(0.50),
+                                          fontWeight: FontWeight.w700),
                                     ),
                                     SizedBox(
                                       height:
@@ -257,8 +265,7 @@ class BottomSheetModal {
                                               child: Container(
                                                 decoration: BoxDecoration(border: Border.all(color:(adultNumber ==1)?Colors.grey: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(8.0),
-                                                  child: Icon(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),                                                  child: Icon(
                                                     Icons.remove,
                                                     color:(adultNumber ==1)?Colors.grey: AppConstants.darkBlue,
                                                   ),
@@ -286,8 +293,7 @@ class BottomSheetModal {
                                               child: Container(
                                                 decoration: BoxDecoration(border: Border.all(color: (adultNumber!=4)? AppConstants.darkBlue:Colors.grey), borderRadius: BorderRadius.all(Radius.circular(50))),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(8.0),
-                                                  child: Icon(Icons.add, color:(adultNumber!=4)? AppConstants.darkBlue:Colors.grey),
+                                                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),                                                  child: Icon(Icons.add, color:(adultNumber!=4)? AppConstants.darkBlue:Colors.grey),
                                                 ),
                                               ),
                                             ),
@@ -321,8 +327,7 @@ class BottomSheetModal {
                                               child: Container(
                                                 decoration: BoxDecoration(border: Border.all(color: (childrenNumber!= 0)?AppConstants.darkBlue:Colors.grey), borderRadius: BorderRadius.all(Radius.circular(50))),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(8.0),
-                                                  child: Icon(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),                                                  child: Icon(
                                                     Icons.remove,
                                                     color:(childrenNumber!= 0)?AppConstants.darkBlue:Colors.grey,
                                                   ),
@@ -347,8 +352,7 @@ class BottomSheetModal {
                                               child: Container(
                                                 decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(8.0),
-                                                  child: Icon(Icons.add, color: AppConstants.darkBlue),
+                                                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),                                                  child: Icon(Icons.add, color: AppConstants.darkBlue),
                                                 ),
                                               ),
                                             ),
@@ -375,7 +379,7 @@ class BottomSheetModal {
                                               children: [
                                                 Text(
                                                   'Age of child ${i+1}',
-                                                  style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
+                                                  style: TextStyle(fontSize: 18, color: Colors.black.withOpacity(0.50), fontWeight: FontWeight.w500),
                                                 ),
                                                 Text(
                                                   '14 years',
