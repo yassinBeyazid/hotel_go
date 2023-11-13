@@ -35,12 +35,11 @@ class CityDropDown extends StatelessWidget {
               const DropdownButtonProps(
                   isVisible: false),
               dropdownDecoratorProps:
-              const DropDownDecoratorProps(
+              const DropDownDecoratorProps(textAlign: TextAlign.center,
                 dropdownSearchDecoration:
                 InputDecoration(
                     border: InputBorder.none,
-                    hintText: "Select city",
-
+                    hintText: "         Select city",
                     contentPadding:
                     EdgeInsets
                         .symmetric(
