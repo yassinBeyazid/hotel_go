@@ -124,7 +124,7 @@ class BottomSheetModal {
                                         fontSize:
                                         18,
                                         color:
-                                        Colors.black,
+                                        Colors.black.withOpacity(0.50),
                                         fontWeight: FontWeight.w400),
                                   ),
                                   Row(
@@ -141,11 +141,11 @@ class BottomSheetModal {
                                         },
                                         child:
                                         Container(
-                                          decoration: BoxDecoration(border: Border.all(color:(roomNumber != 1)? AppConstants.darkBlue:Colors.grey ), borderRadius: BorderRadius.all(Radius.circular(50))),
+                                          decoration: BoxDecoration(border: Border.all(color:(roomNumber != 1)? AppConstants.darkBlue:AppConstants.littleBlue ), borderRadius: BorderRadius.all(Radius.circular(50))),
                                           child: Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),                                            child: Icon(
                                               Icons.remove,
-                                              color: (roomNumber != 1)? AppConstants.darkBlue:Colors.grey,
+                                              color: (roomNumber != 1)? AppConstants.darkBlue:AppConstants.littleBlue,
                                             ),
                                           ),
                                         ),
@@ -236,7 +236,7 @@ class BottomSheetModal {
                                     Text(
                                       'ROOM 1',
                                       style: TextStyle(
-                                          fontSize: 12,
+                                          fontSize: 14,
                                           color: Colors.black.withOpacity(0.50),
                                           fontWeight: FontWeight.w700),
                                     ),
@@ -250,7 +250,7 @@ class BottomSheetModal {
                                       children: [
                                         Text(
                                           'Adults',
-                                          style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
+                                          style: TextStyle(fontSize: 18, color: Colors.black.withOpacity(0.50), fontWeight: FontWeight.w400),
                                         ),
                                         Row(
                                           children: [
@@ -263,11 +263,11 @@ class BottomSheetModal {
 
                                               },
                                               child: Container(
-                                                decoration: BoxDecoration(border: Border.all(color:(adultNumber ==1)?Colors.grey: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
+                                                decoration: BoxDecoration(border: Border.all(color:(adultNumber ==1)?AppConstants.littleBlue: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),                                                  child: Icon(
                                                     Icons.remove,
-                                                    color:(adultNumber ==1)?Colors.grey: AppConstants.darkBlue,
+                                                    color:(adultNumber ==1)?AppConstants.littleBlue: AppConstants.darkBlue,
                                                   ),
                                                 ),
                                               ),
@@ -311,7 +311,7 @@ class BottomSheetModal {
                                       children: [
                                         Text(
                                           'Children',
-                                          style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
+                                          style: TextStyle(fontSize: 18, color:  Colors.black.withOpacity(0.50), fontWeight: FontWeight.w400),
                                         ),
                                         Row(
                                           children: [
@@ -325,11 +325,11 @@ class BottomSheetModal {
 
                                               },
                                               child: Container(
-                                                decoration: BoxDecoration(border: Border.all(color: (childrenNumber!= 0)?AppConstants.darkBlue:Colors.grey), borderRadius: BorderRadius.all(Radius.circular(50))),
+                                                decoration: BoxDecoration(border: Border.all(color: (childrenNumber!= 0)?AppConstants.darkBlue:AppConstants.littleBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
                                                 child: Padding(
                                                   padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 3),                                                  child: Icon(
                                                     Icons.remove,
-                                                    color:(childrenNumber!= 0)?AppConstants.darkBlue:Colors.grey,
+                                                    color:(childrenNumber!= 0)?AppConstants.darkBlue:AppConstants.littleBlue,
                                                   ),
                                                 ),
                                               ),
@@ -379,11 +379,11 @@ class BottomSheetModal {
                                               children: [
                                                 Text(
                                                   'Age of child ${i+1}',
-                                                  style: TextStyle(fontSize: 18, color: Colors.black.withOpacity(0.50), fontWeight: FontWeight.w500),
+                                                  style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400),
                                                 ),
                                                 Text(
                                                   '14 years',
-                                                  style: TextStyle(fontSize: 18, color: Colors.grey, fontWeight: FontWeight.w400),
+                                                  style: TextStyle(fontSize: 16, color: Colors.grey, fontWeight: FontWeight.w400),
                                                 )
                                               ],
                                             ),
