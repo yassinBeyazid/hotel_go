@@ -61,7 +61,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
 
                   const SizedBox(
-                    height: 5,
+                    height: 3,
                   ),
                   Container(
                     decoration: const BoxDecoration(
