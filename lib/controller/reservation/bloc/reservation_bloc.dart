@@ -21,44 +21,9 @@ class ReservationBloc extends Bloc<ReservationEvent, ReservationState> {
     on<SetNationality>((event, emit) {
       emit(state.copyWith(nationality: event.nationality));
     });
-    on<IncrementRooms>((event, emit) {
-      int? count = state.rooms;
-      count = (count! +1);
-      emit(state.copyWith(rooms: count));
+    on<ApplyRoomAdultsChildren>((event, emit) {
+      emit(state.copyWith(rooms: event.rooms,adults: event.adults,children: event.children));
     });
-    on<DecrementRooms>((event, emit) {
-      int? count = state.rooms;
-      if(count !=1) {
-        count = (count! - 1);
-        emit(state.copyWith(rooms: count));
-      }
-    });
-    on<IncrementAdults>((event, emit) {
-      int? count = state.adults;
-      count = (count! +1);
-      emit(state.copyWith(rooms: count));
-    });
-    on<DecrementAdults>((event, emit) {
-      int? count = state.adults;
-      if(count !=1){
-        count = (count! -1);
-        emit(state.copyWith(rooms: count));
-      }
 
-    });
-    on<IncrementChildren>((event, emit) {
-      int? count = state.children;
-
-        count = (count! + 1);
-        emit(state.copyWith(rooms: count));
-
-    });
-    on<DecrementChildren>((event, emit) {
-      int? count = state.children;
-      if(count !=1) {
-        count = (count! - 1);
-        emit(state.copyWith(rooms: count));
-      }
-    });
   }
 }

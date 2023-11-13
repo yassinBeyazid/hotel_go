@@ -23,24 +23,9 @@ class SetNationality extends ReservationEvent {
   SetNationality({this.nationality});
 }
 
-class IncrementRooms extends ReservationEvent {
-
-}
-class DecrementRooms extends ReservationEvent {
-
-}
-
-class IncrementAdults extends ReservationEvent {
-
-
-}
-class DecrementAdults extends ReservationEvent {
-
-}
-
-class IncrementChildren extends ReservationEvent {
-
-}
-class DecrementChildren extends ReservationEvent {
-
+class ApplyRoomAdultsChildren extends ReservationEvent{
+  final int? rooms;
+  final int? adults;
+  final int? children;
+  ApplyRoomAdultsChildren({this.children,this.adults,this.rooms});
 }

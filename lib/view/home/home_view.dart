@@ -636,17 +636,28 @@ class _HomeViewState extends State<HomeView> {
                                                               ),
                                                             ),
                                                           ),
-                                                          Container(
-                                                            decoration: BoxDecoration(
-                                                                color: AppConstants.darkBlue,
-                                                                borderRadius: BorderRadius.all(Radius.circular(15))
-                                                            ),
-                                                            width: MediaQuery.of(context).size.width,
-                                                            height: 50,
-                                                            child: Center(
-                                                              child: Text('Apply',style: TextStyle(
-                                                                  fontSize: 18, color: Colors.white, fontWeight: FontWeight.w700
-                                                              ),),
+                                                          InkWell(
+                                                            onTap: (){
+                                                              BlocProvider.of<ReservationBloc>(
+                                                                  context)
+                                                                  .add(ApplyRoomAdultsChildren(
+                                                                children: childrenNumber,
+                                                                adults: adultNumber,rooms: roomNumber
+                                                              ));
+                                                              Navigator.pop(context);
+                                                            },
+                                                            child: Container(
+                                                              decoration: BoxDecoration(
+                                                                  color: AppConstants.darkBlue,
+                                                                  borderRadius: BorderRadius.all(Radius.circular(15))
+                                                              ),
+                                                              width: MediaQuery.of(context).size.width,
+                                                              height: 50,
+                                                              child: Center(
+                                                                child: Text('Apply',style: TextStyle(
+                                                                    fontSize: 18, color: Colors.white, fontWeight: FontWeight.w700
+                                                                ),),
+                                                              ),
                                                             ),
                                                           )
                                                         ],
