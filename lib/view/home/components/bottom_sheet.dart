@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced_switch/flutter_advanced_switch.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../app_constants.dart';
 import '../../../controller/reservation/bloc/reservation_bloc.dart';
 class BottomSheetModal {
+
   static showModalSheet (context){
+    final _controller = ValueNotifier<bool>(false);
+
     showModalBottomSheet(
         context: context,
         isScrollControlled: true,
@@ -390,6 +394,87 @@ class BottomSheetModal {
 
                                   ],
                                 ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Material(
+                          elevation: 5,
+                          borderRadius:
+                          BorderRadius
+                              .all(Radius
+                              .circular(
+                              8)),
+                          child: Container(
+                            width: MediaQuery.of(
+                                context)
+                                .size
+                                .width,
+                            height: 60,
+                            decoration:
+                            BoxDecoration(
+                              color: Colors
+                                  .white,
+                              borderRadius:
+                              BorderRadius.all(
+                                  Radius.circular(
+                                      8)),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets
+                                  .symmetric(
+                                  horizontal:
+                                  20),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(
+                                            'Pet-friendly',
+                                            style: TextStyle(
+                                                fontSize:
+                                                14,
+                                                color:
+                                                Colors.black,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                          SizedBox(width: 5,),
+                                          Icon(Icons.info_outline)
+                                        ],
+                                      ),
+                                      Text(
+                                        'Only show stays that allow pets',
+                                        style: TextStyle(
+                                            fontSize:
+                                            14,
+                                            color:
+                                            Colors.black,
+                                            fontWeight: FontWeight.w300),
+                                      ),
+
+                                    ],
+                                  ),
+                                  AdvancedSwitch(
+                                    controller: _controller,
+                                    activeColor: Colors.green,
+                                    inactiveColor: Colors.grey,
+                                    // activeChild: Text('ON'),
+                                    // inactiveChild: Text('OFF'),
+
+                                    borderRadius: BorderRadius.all(const Radius.circular(15)),
+                                    width: 50.0,
+                                    height: 30.0,
+                                    enabled: true,
+                                    disabledOpacity: 0.5,
+                                  ),
+
+                                ],
                               ),
                             ),
                           ),
