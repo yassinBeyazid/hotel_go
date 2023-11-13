@@ -288,338 +288,370 @@ class _HomeViewState extends State<HomeView> {
                                           context: context,
                                           isScrollControlled: true,
                                           builder: (context) {
-                                            int count = 1;
+                                            int roomNumber = 1;
+                                            int adultNumber = 1;
+                                            int childrenNumber = 1;
                                             return StatefulBuilder(builder:
                                                 (BuildContext context,
                                                     StateSetter
                                                     setModalState) {
-                                              return Padding(
-                                                padding: const EdgeInsets
-                                                    .symmetric(
-                                                    horizontal: 20,
-                                                    vertical: 10),
-                                                child:
-                                                SingleChildScrollView(
-                                                  child: Column(
-                                                    children: [
-                                                      SizedBox(
-                                                        height: 20,
-                                                      ),
-                                                      Material(
-                                                        elevation: 5,
-                                                        borderRadius:
-                                                        BorderRadius
-                                                            .all(Radius
-                                                            .circular(
-                                                            8)),
-                                                        child: Container(
-                                                          width: MediaQuery.of(
-                                                              context)
-                                                              .size
-                                                              .width,
-                                                          height: 60,
-                                                          decoration:
-                                                          BoxDecoration(
-                                                            color: Colors
-                                                                .white,
-                                                            borderRadius:
-                                                            BorderRadius.all(
-                                                                Radius.circular(
-                                                                    8)),
+                                              return FractionallySizedBox(
+                                                heightFactor: 0.9,
+                                                child: Scaffold(
+                                                  backgroundColor: Colors.white10,
+                                                  appBar: AppBar(
+                                                    centerTitle: true,
+                                                    backgroundColor: Colors.white,
+                                                    title:  Text(
+                                                      'Rooms and Guests',
+                                                      style: TextStyle(
+                                                          fontSize:
+                                                          18,
+                                                          color:
+                                                          Colors.black,
+                                                          fontWeight: FontWeight.w400),
+                                                    ),
+                                                  ),
+                                                  body: Padding(
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        horizontal: 20,
+                                                        vertical: 10),
+                                                    child:
+                                                    SingleChildScrollView(
+                                                      child: Column(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 20,
                                                           ),
-                                                          child: Padding(
-                                                            padding: const EdgeInsets
-                                                                .symmetric(
-                                                                horizontal:
-                                                                20),
-                                                            child: Row(
-                                                              mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                              children: [
-                                                                Text(
-                                                                  'Rooms',
-                                                                  style: TextStyle(
-                                                                      fontSize:
-                                                                      18,
-                                                                      color:
-                                                                      Colors.black,
-                                                                      fontWeight: FontWeight.w400),
-                                                                ),
-                                                                Row(
+                                                          Material(
+                                                            elevation: 5,
+                                                            borderRadius:
+                                                            BorderRadius
+                                                                .all(Radius
+                                                                .circular(
+                                                                8)),
+                                                            child: Container(
+                                                              width: MediaQuery.of(
+                                                                  context)
+                                                                  .size
+                                                                  .width,
+                                                              height: 60,
+                                                              decoration:
+                                                              BoxDecoration(
+                                                                color: Colors
+                                                                    .white,
+                                                                borderRadius:
+                                                                BorderRadius.all(
+                                                                    Radius.circular(
+                                                                        8)),
+                                                              ),
+                                                              child: Padding(
+                                                                padding: const EdgeInsets
+                                                                    .symmetric(
+                                                                    horizontal:
+                                                                    20),
+                                                                child: Row(
+                                                                  mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
                                                                   children: [
-                                                                    InkWell(
-                                                                      onTap:
-                                                                          () {
-                                                                            setModalState(() {
-                                                                              count--;
-                                                                            });
-                                                                        // BlocProvider.of<ReservationBloc>(context).add(DecrementRooms());
-                                                                        // setModalState(() {
-                                                                        //
-                                                                        // });
-                                                                      },
-                                                                      child:
-                                                                      Container(
-                                                                        decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
-                                                                        child: Padding(
-                                                                          padding: const EdgeInsets.all(8.0),
-                                                                          child: Icon(
-                                                                            Icons.remove,
-                                                                            color: AppConstants.darkBlue,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    SizedBox(
-                                                                      width:
-                                                                      10,
-                                                                    ),
                                                                     Text(
-                                                                      count.toString(),
+                                                                      'Rooms',
                                                                       style: TextStyle(
-                                                                          fontSize: 18,
-                                                                          color: Colors.black,
+                                                                          fontSize:
+                                                                          18,
+                                                                          color:
+                                                                          Colors.black,
                                                                           fontWeight: FontWeight.w400),
                                                                     ),
-                                                                    SizedBox(
-                                                                      width:
-                                                                      10,
-                                                                    ),
-                                                                    InkWell(
-                                                                      onTap:
-                                                                          () {
-
-                                                                        // BlocProvider.of<ReservationBloc>(context).add(IncrementRooms());
+                                                                    Row(
+                                                                      children: [
+                                                                        InkWell(
+                                                                          onTap:
+                                                                              () {
                                                                             setModalState(() {
-                                                                          count++;
-                                                                        });
-
-                                                                      },
-                                                                      child:
-                                                                      Container(
-                                                                        decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
-                                                                        child: Padding(
-                                                                          padding: const EdgeInsets.all(8.0),
-                                                                          child: Icon(Icons.add, color: AppConstants.darkBlue),
+                                                                              roomNumber--;
+                                                                            });
+                                                                            // BlocProvider.of<ReservationBloc>(context).add(DecrementRooms());
+                                                                            // setModalState(() {
+                                                                            //
+                                                                            // });
+                                                                          },
+                                                                          child:
+                                                                          Container(
+                                                                            decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
+                                                                            child: Padding(
+                                                                              padding: const EdgeInsets.all(8.0),
+                                                                              child: Icon(
+                                                                                Icons.remove,
+                                                                                color: AppConstants.darkBlue,
+                                                                              ),
+                                                                            ),
+                                                                          ),
                                                                         ),
-                                                                      ),
-                                                                    ),
+                                                                        SizedBox(
+                                                                          width:
+                                                                          10,
+                                                                        ),
+                                                                        Text(
+                                                                          roomNumber.toString(),
+                                                                          style: TextStyle(
+                                                                              fontSize: 18,
+                                                                              color: Colors.black,
+                                                                              fontWeight: FontWeight.w400),
+                                                                        ),
+                                                                        SizedBox(
+                                                                          width:
+                                                                          10,
+                                                                        ),
+                                                                        InkWell(
+                                                                          onTap:
+                                                                              () {
+
+                                                                            setModalState(() {
+                                                                              roomNumber++;
+                                                                            });
+
+                                                                          },
+                                                                          child:
+                                                                          Container(
+                                                                            decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
+                                                                            child: Padding(
+                                                                              padding: const EdgeInsets.all(8.0),
+                                                                              child: Icon(Icons.add, color: AppConstants.darkBlue),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    )
                                                                   ],
-                                                                )
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      SizedBox(
-                                                        height: 10,
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                        const EdgeInsets
-                                                            .symmetric(
-                                                            vertical:
-                                                            10),
-                                                        child: Material(
-                                                          elevation: 5,
-                                                          borderRadius: BorderRadius
-                                                              .all(Radius
-                                                              .circular(
-                                                              8)),
-                                                          child:
-                                                          Container(
-                                                            width: MediaQuery.of(
-                                                                context)
-                                                                .size
-                                                                .width,
-                                                            decoration:
-                                                            BoxDecoration(
-                                                              color: Colors
-                                                                  .white,
-                                                              borderRadius:
-                                                              BorderRadius.all(
-                                                                  Radius.circular(8)),
-                                                            ),
-                                                            child:
-                                                            Padding(
-                                                              padding: const EdgeInsets
-                                                                  .symmetric(
-                                                                  horizontal:
-                                                                  20,
-                                                                  vertical:
-                                                                  10),
-                                                              child:
-                                                              Column(
-                                                                crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                                children: [
-                                                                  Text(
-                                                                    'Room 1',
-                                                                    style: TextStyle(
-                                                                        fontSize: 18,
-                                                                        color: Colors.black,
-                                                                        fontWeight: FontWeight.w400),
-                                                                  ),
-                                                                  SizedBox(
-                                                                    height:
-                                                                    10,
-                                                                  ),
-                                                                  Row(
-                                                                    mainAxisAlignment:
-                                                                    MainAxisAlignment.spaceBetween,
-                                                                    children: [
-                                                                      Text(
-                                                                        'Adults',
-                                                                        style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
-                                                                      ),
-                                                                      Row(
-                                                                        children: [
-                                                                          InkWell(
-                                                                            onTap: () {
-                                                                              BlocProvider.of<ReservationBloc>(context).add(IncrementAdults());
-                                                                              setState(() {});
-                                                                            },
-                                                                            child: Container(
-                                                                              decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
-                                                                              child: Padding(
-                                                                                padding: const EdgeInsets.all(8.0),
-                                                                                child: Icon(
-                                                                                  Icons.remove,
-                                                                                  color: AppConstants.darkBlue,
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                          SizedBox(
-                                                                            width: 10,
-                                                                          ),
-                                                                          Text(
-                                                                            '1',
-                                                                            style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
-                                                                          ),
-                                                                          SizedBox(
-                                                                            width: 10,
-                                                                          ),
-                                                                          InkWell(
-                                                                            onTap: () {
-                                                                              BlocProvider.of<ReservationBloc>(context).add(DecrementAdults());
-
-                                                                            },
-                                                                            child: Container(
-                                                                              decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
-                                                                              child: Padding(
-                                                                                padding: const EdgeInsets.all(8.0),
-                                                                                child: Icon(Icons.add, color: AppConstants.darkBlue),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      )
-                                                                    ],
-                                                                  ),
-                                                                  SizedBox(
-                                                                    height:
-                                                                    10,
-                                                                  ),
-                                                                  Row(
-                                                                    mainAxisAlignment:
-                                                                    MainAxisAlignment.spaceBetween,
-                                                                    children: [
-                                                                      Text(
-                                                                        'Children',
-                                                                        style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
-                                                                      ),
-                                                                      Row(
-                                                                        children: [
-                                                                          InkWell(
-                                                                            onTap: () {
-                                                                              BlocProvider.of<ReservationBloc>(context).add(DecrementChildren());
-                                                                            },
-                                                                            child: Container(
-                                                                              decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
-                                                                              child: Padding(
-                                                                                padding: const EdgeInsets.all(8.0),
-                                                                                child: Icon(
-                                                                                  Icons.remove,
-                                                                                  color: AppConstants.darkBlue,
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                          SizedBox(
-                                                                            width: 10,
-                                                                          ),
-                                                                          Text(
-                                                                            '1',
-                                                                            style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
-                                                                          ),
-                                                                          SizedBox(
-                                                                            width: 10,
-                                                                          ),
-                                                                          InkWell(
-                                                                            onTap: () {
-                                                                              BlocProvider.of<ReservationBloc>(context).add(IncrementChildren());
-                                                                            },
-                                                                            child: Container(
-                                                                              decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
-                                                                              child: Padding(
-                                                                                padding: const EdgeInsets.all(8.0),
-                                                                                child: Icon(Icons.add, color: AppConstants.darkBlue),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      )
-                                                                    ],
-                                                                  ),
-                                                                  SizedBox(
-                                                                    height:
-                                                                    10,
-                                                                  ),
-                                                                  Padding(
-                                                                    padding:
-                                                                    const EdgeInsets.only(left: 20),
-                                                                    child:
-                                                                    Row(
-                                                                      mainAxisAlignment:
-                                                                      MainAxisAlignment.spaceBetween,
-                                                                      children: [
-                                                                        for (int i = 0; i < state.children!; i++)
-                                                                          Text(
-                                                                            'Age of child $i',
-                                                                            style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
-                                                                          ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding:
-                                                                    const EdgeInsets.only(left: 20),
-                                                                    child:
-                                                                    Row(
-                                                                      mainAxisAlignment:
-                                                                      MainAxisAlignment.spaceBetween,
-                                                                      children: [
-                                                                        Text(
-                                                                          'Age of child 2',
-                                                                          style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
-                                                                        ),
-                                                                        Text(
-                                                                          '14 years',
-                                                                          style: TextStyle(fontSize: 18, color: Colors.grey, fontWeight: FontWeight.w400),
-                                                                        )
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                ],
+                                                                ),
                                                               ),
                                                             ),
                                                           ),
-                                                        ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                            const EdgeInsets
+                                                                .symmetric(
+                                                                vertical:
+                                                                10),
+                                                            child: Material(
+                                                              elevation: 5,
+                                                              borderRadius: BorderRadius
+                                                                  .all(Radius
+                                                                  .circular(
+                                                                  8)),
+                                                              child:
+                                                              Container(
+                                                                width: MediaQuery.of(
+                                                                    context)
+                                                                    .size
+                                                                    .width,
+                                                                decoration:
+                                                                BoxDecoration(
+                                                                  color: Colors
+                                                                      .white,
+                                                                  borderRadius:
+                                                                  BorderRadius.all(
+                                                                      Radius.circular(8)),
+                                                                ),
+                                                                child:
+                                                                Padding(
+                                                                  padding: const EdgeInsets
+                                                                      .symmetric(
+                                                                      horizontal:
+                                                                      20,
+                                                                      vertical:
+                                                                      10),
+                                                                  child:
+                                                                  Column(
+                                                                    crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                    children: [
+                                                                      Text(
+                                                                        'Room 1',
+                                                                        style: TextStyle(
+                                                                            fontSize: 18,
+                                                                            color: Colors.black,
+                                                                            fontWeight: FontWeight.w400),
+                                                                      ),
+                                                                      SizedBox(
+                                                                        height:
+                                                                        10,
+                                                                      ),
+                                                                      Row(
+                                                                        mainAxisAlignment:
+                                                                        MainAxisAlignment.spaceBetween,
+                                                                        children: [
+                                                                          Text(
+                                                                            'Adults',
+                                                                            style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
+                                                                          ),
+                                                                          Row(
+                                                                            children: [
+                                                                              InkWell(
+                                                                                onTap: () {
+                                                                                  adultNumber--;
+                                                                                  setModalState(() {});
+                                                                                },
+                                                                                child: Container(
+                                                                                  decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
+                                                                                  child: Padding(
+                                                                                    padding: const EdgeInsets.all(8.0),
+                                                                                    child: Icon(
+                                                                                      Icons.remove,
+                                                                                      color: AppConstants.darkBlue,
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                width: 10,
+                                                                              ),
+                                                                              Text(
+                                                                                adultNumber.toString(),
+                                                                                style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                width: 10,
+                                                                              ),
+                                                                              InkWell(
+                                                                                onTap: () {
+                                                                                  adultNumber++;
+                                                                                  setModalState(() {});
+                                                                                },
+                                                                                child: Container(
+                                                                                  decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
+                                                                                  child: Padding(
+                                                                                    padding: const EdgeInsets.all(8.0),
+                                                                                    child: Icon(Icons.add, color: AppConstants.darkBlue),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          )
+                                                                        ],
+                                                                      ),
+                                                                      SizedBox(
+                                                                        height:
+                                                                        10,
+                                                                      ),
+                                                                      Row(
+                                                                        mainAxisAlignment:
+                                                                        MainAxisAlignment.spaceBetween,
+                                                                        children: [
+                                                                          Text(
+                                                                            'Children',
+                                                                            style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
+                                                                          ),
+                                                                          Row(
+                                                                            children: [
+                                                                              InkWell(
+                                                                                onTap: () {
+                                                                                  childrenNumber--;
+                                                                                  setModalState(() {});
+                                                                                },
+                                                                                child: Container(
+                                                                                  decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
+                                                                                  child: Padding(
+                                                                                    padding: const EdgeInsets.all(8.0),
+                                                                                    child: Icon(
+                                                                                      Icons.remove,
+                                                                                      color: AppConstants.darkBlue,
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                width: 10,
+                                                                              ),
+                                                                              Text(
+                                                                                childrenNumber.toString(),
+                                                                                style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                width: 10,
+                                                                              ),
+                                                                              InkWell(
+                                                                                onTap: () {
+                                                                                  childrenNumber++;
+                                                                                  setModalState(() {});
+                                                                                },
+                                                                                child: Container(
+                                                                                  decoration: BoxDecoration(border: Border.all(color: AppConstants.darkBlue), borderRadius: BorderRadius.all(Radius.circular(50))),
+                                                                                  child: Padding(
+                                                                                    padding: const EdgeInsets.all(8.0),
+                                                                                    child: Icon(Icons.add, color: AppConstants.darkBlue),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          )
+                                                                        ],
+                                                                      ),
+                                                                      SizedBox(
+                                                                        height:
+                                                                        10,
+                                                                      ),
+                                                                      Column(
+                                                                        mainAxisAlignment:
+                                                                        MainAxisAlignment.spaceBetween,
+                                                                        children: [
+                                                                          for (int i = 0; i < childrenNumber; i++)
+                                                                            Padding(
+                                                                              padding:
+                                                                              const EdgeInsets.only(left: 20),
+                                                                              child:
+                                                                              Row(
+                                                                                mainAxisAlignment:
+                                                                                MainAxisAlignment.spaceBetween,
+                                                                                children: [
+                                                                                  Text(
+                                                                                    'Age of child $i',
+                                                                                    style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w400),
+                                                                                  ),
+                                                                                  Text(
+                                                                                    '14 years',
+                                                                                    style: TextStyle(fontSize: 18, color: Colors.grey, fontWeight: FontWeight.w400),
+                                                                                  )
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                        ],
+                                                                      ),
+                                                                      SizedBox(
+                                                                        height:
+                                                                        10,
+                                                                      ),
+
+
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Container(
+                                                            decoration: BoxDecoration(
+                                                                color: AppConstants.darkBlue,
+                                                                borderRadius: BorderRadius.all(Radius.circular(15))
+                                                            ),
+                                                            width: MediaQuery.of(context).size.width,
+                                                            height: 50,
+                                                            child: Center(
+                                                              child: Text('Apply',style: TextStyle(
+                                                                  fontSize: 18, color: Colors.white, fontWeight: FontWeight.w700
+                                                              ),),
+                                                            ),
+                                                          )
+                                                        ],
                                                       ),
-                                                    ],
+                                                    ),
                                                   ),
                                                 ),
                                               );
