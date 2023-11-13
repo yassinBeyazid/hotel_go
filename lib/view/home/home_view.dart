@@ -38,19 +38,20 @@ class _HomeViewState extends State<HomeView> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    height: 50,
-                    width: 200,
-                    decoration: const BoxDecoration(
-                      color: AppConstants.darkBlue,
-                    ),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Center(
+                  ClipPath(
+                    clipper: AngledContainerClipper(),
+                    child: Container(
+                      height: 50,
+                      width: 200,
+                      decoration: const BoxDecoration(
+                        color: AppConstants.darkBlue,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
                         child: Text(
                           'Hotels Search',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 18,
                             color: Colors.white,
                             fontWeight: FontWeight.w700,
                           ),
@@ -58,6 +59,7 @@ class _HomeViewState extends State<HomeView> {
                       ),
                     ),
                   ),
+
                   const SizedBox(
                     height: 5,
                   ),
@@ -175,17 +177,21 @@ class _HomeViewState extends State<HomeView> {
   }
 }
 
-// class CustomClips extends CustomClipper<Path> {
-//   @override
-//   Path getClip(Size size) {
-//     Path path = Path();
-//     path.lineTo(0.0, size.height);
-//     // path.lineTo(size.width, 0.0);
-//     path.lineTo(size.width, size.height);
-//     path.lineTo(size.width - 20, size.height);
-//     return path;
-//   }
-//
-//   @override
-//   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-// }
+class AngledContainerClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final borderRadius = 5 * size.shortestSide;
+    final path = Path();
+    path.lineTo(size.width - 60, 0);
+    path.lineTo(size.width - 16, size.height);
+    path.lineTo(16, size.height);
+    path.lineTo(0, size.height);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
+  }
+}
